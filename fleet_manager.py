@@ -89,6 +89,8 @@ def filter_by_div(names, divs):
         if divs[i] == input:
             print("List of members in " + input_)
             print(names[i])
+        else:
+            print("Division not recognised")
 
 
 
