@@ -12,7 +12,7 @@ def display_menu():
     choice = input("Choose a function ")
     return choice
 
-def add_member(names, ranks, divs, ids):
+def add_member(name, rank, div, id):
     name = input("Name: ")
     rank = input("Rank: ")
     div = input("Division: ")
@@ -38,7 +38,7 @@ def add_member(names, ranks, divs, ids):
     print("Crew Memeber Added")
 
 
-def remove_member(name, ranks, divs, ids):
+def remove_member(name, rank, div, id):
     remove_id = int(input("Enter ID: "))
     if remove_id in id:
         i = id.index(remove_id)
@@ -52,7 +52,17 @@ def remove_member(name, ranks, divs, ids):
 
 
 
-update_rank()
+def update_rank(name, rank, id):
+    target = int(input("ID: "))
+
+    if target in id:
+        i = id.index(target)
+        new_rank = input("New rank: ")
+        rank[i] = new_rank
+        print("Rank updated")
+    else:
+        print("Rank not found")
+
 
 
 display_roster()
