@@ -6,7 +6,7 @@ def init_database():
     return names, ranks, div, id
 
 
-def display_menu():
+def display_menu(user):
     print("\nSigned in as:", user)
     print("1: Add\n2: Remove\n3: Update Rank\n4: Display\n5: Search\n6: Division\n7: Payroll\n8: Count Officers\n9: Exit")
     choice = input("Choose a function ")
@@ -34,7 +34,7 @@ def add_member(names, ranks, div, id):
     names.append(names)
     ranks.append(ranks)
     div.append(div)
-    ids.append(new_id)
+    id.append(new_id)
     print("Crew Memeber Added")
 
 
@@ -84,10 +84,10 @@ def search_crew(names, ranks, div, id):
 
 
 def filter_by_div(names, divs):
-    input = input("Enter the division you require: ")
+    input_ = input("Enter the division you require: ")
     for i in range(len(names)):
         if divs[i] == input:
-            print("List of members in " + input)
+            print("List of members in " + input_)
             print(names[i])
 
 
@@ -118,3 +118,37 @@ def count_officers(ranks):
         if rank in list:
             count += 1
     return count
+
+
+def main():
+    names, ranks, div, id = init_database()
+
+    user_input = input("Enter your name: ")
+
+    running = True
+
+    while running:
+        choice = display_menu(user_input)
+
+        
+        if choice == "1":
+            add_member(names, ranks, div, id)
+        elif choice == "2":
+            remove_member(names, ranks, div, id)
+        elif choice == "3":
+            update_rank(names, ranks, id)
+        elif choice == "4":
+            display_roster(names, ranks, div, id)
+        elif choice == "5":
+            search_crew(names, ranks, div, id)
+        elif choice == "6":
+            filter_by_div(names, div)
+        elif choice == "7":
+            print("Payroll:", calculate_payroll(ranks))
+        elif choice == "8":
+            print("Captain and Commander Ranks:", count_officers(ranks))
+        elif choice == "9":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice g")
