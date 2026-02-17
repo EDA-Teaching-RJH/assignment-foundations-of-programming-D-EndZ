@@ -94,20 +94,22 @@ def filter_by_div(names, divs):
 
 def calculate_payroll(ranks):
     total = 0
+    rank = input("Enter Rank: ")
 
-    for rank in ranks:
-        if rank == "Captain":
-            total += 1000
-        elif rank == "Commander":
-            total += 800
-        elif rank == "Lt. Commander":
-            total += 600
-        elif rank == "Lieutenant":
-            total += 400
-        elif rank == "Ensign":
-            total += 200
+    if rank == "Captain":
+        total += 1000
+    elif rank == "Commander":
+        total += 800
+    elif rank == "Lt. Commander":
+        total += 600
+    elif rank == "Lieutenant":
+        total += 400
+    elif rank == "Ensign":
+        total += 200
+    else:
+        print("Rank not recognised")
+        return 0
 
-    return total
 
 
 
