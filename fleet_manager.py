@@ -86,11 +86,9 @@ def search_crew(names, ranks, div, id):
 def filter_by_div(names, divs):
     input_ = input("Enter the division you require: ")
     for i in range(len(names)):
-        if divs[i] == input:
+        if divs[i] == input_:
             print("List of members in " + input_)
             print(names[i])
-        else:
-            print("Division not recognised")
 
 
 
