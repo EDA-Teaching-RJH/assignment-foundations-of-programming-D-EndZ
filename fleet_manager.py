@@ -12,9 +12,9 @@ def display_menu():
     choice = input("Choose a function ")
     return choice
 
-def add_member(name, rank, div, id):
-    name = input("Name: ")
-    rank = input("Rank: ")
+def add_member(names, ranks, div, id):
+    names = input("Name: ")
+    ranks = input("Rank: ")
     div = input("Division: ")
     new_id = int(input("ID: "))
 
@@ -22,7 +22,7 @@ def add_member(name, rank, div, id):
         print("ID already exists")
         return
 
-    if rank in ["Captain", "Commander", "Lt.Commander", "Ensign", "Lieutenant"]:
+    if ranks in ["Captain", "Commander", "Lt.Commander", "Ensign", "Lieutenant"]:
         valid = True
     else:
         valid = False
@@ -31,50 +31,70 @@ def add_member(name, rank, div, id):
         print("Rank unrecognised")
         return
     
-    names.append(name)
-    ranks.append(rank)
-    divs.append(div)
+    names.append(names)
+    ranks.append(ranks)
+    div.append(div)
     ids.append(new_id)
     print("Crew Memeber Added")
 
 
-def remove_member(name, rank, div, id):
+def remove_member(names, ranks, div, id):
     remove_id = int(input("Enter ID: "))
     if remove_id in id:
         i = id.index(remove_id)
-        name.pop(i)
+        names.pop(i)
         ranks.pop(i)
-        divs.pop(i)
-        ids.pop(i)
+        div.pop(i)
+        id.pop(i)
         print("Member removed")
     else:
         print("Member not found")
 
 
 
-def update_rank(name, rank, id):
+def update_rank(names, ranks, id):
     target = int(input("ID: "))
 
     if target in id:
         i = id.index(target)
         new_rank = input("New rank: ")
-        rank[i] = new_rank
+        ranks[i] = new_rank
         print("Rank updated")
     else:
         print("Rank not found")
 
 
 
-display_roster()
+def display_roster(names, ranks, div, id):
+    print("\nRoster:")
+    for i in range(len(names)):
+        print(id[i], names[i], ranks[i], div[i])
 
 
-search_crew()
+def search_crew():
+
 
 
 filter_by_div()
 
 
-calculate_payroll(ranks)
+def calculate_payroll(ranks):
+    total = 0
+
+    for rank in ranks:
+        if rank == "Captain":
+            total += 1000
+        elif rank == "Commander":
+            total += 800
+        elif rank == "Lt. Commander":
+            total += 600
+        elif rank == "Lieutenant":
+            total += 400
+        elif rank == "Ensign":
+            total += 200
+
+    return total
+
 
 
 count_officers(ranks)
