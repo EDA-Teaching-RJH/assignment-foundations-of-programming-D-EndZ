@@ -71,7 +71,15 @@ def display_roster(names, ranks, div, id):
         print(id[i], names[i], ranks[i], div[i])
 
 
-def search_crew():
+def search_crew(names, ranks, div, id):
+    term = input("Search for crew member:")
+    for i in range(len(names)):
+        if term.lower() in names[i].lower():
+            print("Found")
+            print(names[i], ranks[i], div[i], id[i])
+        else:
+            print("Crew member not found")
+
 
 
 
