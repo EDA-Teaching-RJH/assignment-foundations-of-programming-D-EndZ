@@ -83,7 +83,13 @@ def search_crew(names, ranks, div, id):
 
 
 
-filter_by_div()
+def filter_by_div(names, divs):
+    input = input("Enter the division you require: ")
+    for i in range(len(names)):
+        if divs[i] == input:
+            print("List of members in " + input)
+            print(names[i])
+
 
 
 def calculate_payroll(ranks):
