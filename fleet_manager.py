@@ -109,21 +109,24 @@ def calculate_payroll(ranks):
         total += 200
     else:
         print("Rank not recognised")
-    return total
+    print("Rank Payroll", total)
+
     
-    if r in ranks:
-        if rank == "Captain":
+    for r in ranks:
+        if r == "Captain":
             total_crew += 1000
-        elif rank == "Commander":
+        elif r == "Commander":
             total_crew += 800
-        elif rank == "Lt. Commander":
+        elif r == "Lt. Commander":
             total_crew += 600
-        elif rank == "Lieutenant":
+        elif r == "Lieutenant":
             total_crew += 400
-        elif rank == "Ensign":
+        elif r == "Ensign":
             total_crew += 200
 
-        print("Total cost of crew is " + total_crew)
+    print("Total cost of crew is ", total_crew)
+    
+    return "finshed"
 
 
 
@@ -161,7 +164,7 @@ def main():
         elif choice == "6":
             filter_by_div(names, div)
         elif choice == "7":
-            print("Rank Payroll:", calculate_payroll(ranks))
+            print("Payroll:", calculate_payroll(ranks))
         elif choice == "8":
             print("Captain and Commander Ranks:", count_officers(ranks))
         elif choice == "9":
