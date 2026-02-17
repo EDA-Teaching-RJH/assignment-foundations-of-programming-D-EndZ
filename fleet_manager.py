@@ -152,3 +152,5 @@ def main():
             break
         else:
             print("Invalid choice g")
+
+main()
