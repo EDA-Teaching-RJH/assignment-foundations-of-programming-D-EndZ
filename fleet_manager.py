@@ -108,7 +108,7 @@ def calculate_payroll(ranks):
         total += 200
     else:
         print("Rank not recognised")
-        return 0
+    return total
 
 
 
