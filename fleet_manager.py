@@ -12,6 +12,32 @@ def display_menu():
     choice = input("Choose a function ")
     return choice
 
+def add_member(names, ranks, divs, ids):
+    name = input("Name: ")
+    rank = input("Rank: ")
+    div = input("Division: ")
+    new_id = int(input("ID: "))
+
+    if new_id in id:
+        print("ID already exists")
+        return
+
+    if rank in ["Captain", "Commander", "Lt.Commander", "Ensign", "Lieutenant"]:
+        valid = True
+    else:
+        valid = False
+
+    if valid == False:
+        print("Rank unrecognised")
+        return
+    
+    names.append(name)
+    ranks.append(rank)
+    divs.append(div)
+    ids.append(new_id)
+    print("Crew Memeber Added")
+
+
 remove_member(name, ranks, divs, ids)
 
 
