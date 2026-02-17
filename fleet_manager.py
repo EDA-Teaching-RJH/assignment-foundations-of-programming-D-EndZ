@@ -6,8 +6,11 @@ def init_database():
     return names, ranks, div, id
 
 
-display_menu()
-
+def display_menu():
+    print("\nSigned in as:", user)
+    print("1: Add\n2: Remove\n3: Update Rank\n4: Display\n5: Search\n6: Division\n7: Payroll\n8: Count Officers\n9: Exit")
+    choice = input("Choose a function ")
+    return choice
 
 remove_member(name, ranks, divs, ids)
 
